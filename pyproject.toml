@@ -1,0 +1,11 @@
+[project]
+name = "task26"
+version = "0.1.0"
+description = "GitHub Actions Lint Runner"
+requires-python = ">=3.11"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
