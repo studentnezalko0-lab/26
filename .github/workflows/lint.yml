@@ -1,0 +1,27 @@
+name: Lint Runner
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Black and Ruff
+        run: pip install black ruff
+
+      - name: Check formatting with Black
+        run: black --check src/
+
+      - name: Run Ruff
+        run: ruff check src/
